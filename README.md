@@ -26,6 +26,10 @@ But the main focus is on applying `PREEMPT_RT` patches after looking inside the 
 
 Summary of the steps to build the kernel are:
 
+- Prerequisites on Ubuntu 20.04
+
+      sudo apt-get install bison flex libssl-dev
+
 - Environment variables
 
       export CROSS_COMPILE=$HOME/rootfs/l4t-gcc/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
