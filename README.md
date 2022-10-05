@@ -83,7 +83,7 @@ Summary of the steps to build the kernel are:
   
         TEGRA_KERNEL_OUT/arch/arm64/boot/Image
         
-[Step-by-step guide](https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3231/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fkernel_custom.html%23) 
+  * [Step-by-step guide](https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3231/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fkernel_custom.html%23) 
 
 A look inside the PREEMPT_RT patch 
 
