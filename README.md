@@ -3,13 +3,14 @@
 
 RTOS beyond the preemptive scheduling algorithms.
 
-Lets start by looking at how these algorithms are implemented with an example taken from `PREEMPT_RT` patches.
+Lets start by looking at how these algorithms are implemented with an example taken from `PREEMPT_RT` [patches](https://cdn.kernel.org/pub/linux/kernel/projects/rt/).
 These are code changes made to turn the linux kernel into `Real-Time Preemption`.
 You can already configure the linux kernel for various preemptive scheduling or none.
 
 - PREEMPT_NONE
 - PREEMPT_VOLUNTARY
 - PREEMPT
+- [PREEMPT_RT](wiki.linuxfoundation.org/realtime/preempt_rt_versions)
 
 [Kconfig](https://kernel.ubuntu.com/git/ubuntu/ubuntu-focal.git/tree/kernel/Kconfig.preempt)
 
@@ -35,7 +36,12 @@ Summary of the steps to build the kernel are:
       export CROSS_COMPILE=$HOME/rootfs/l4t-gcc/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
       export TEGRA_KERNEL_OUT=./jetson_linux
       export LOCALVERSION=-tegra
-    
+
+- Apply RT patches  
+
+      cd scripts 
+      ./rt-patch.sh apply-patches
+      
 - Building
 
   * Configure
