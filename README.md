@@ -3,6 +3,33 @@
 
 RTOS beyond the preemptive scheduling algorithms.
 
+Whenever someone attempts to define `RTOS` they often start by telling you what it is not.
+
+Such as `Real-Time` is not optimised system performance i.e fast.
+
+Since software is often build for user acceptance, this exclusion from the definition of `RTOS` will come as a surprise to most people.
+So lets start by assuming what a lot of people will understand by the term `Real-Time`.
+Most likely if you choose to have an `RTOS` operating system, you want to achieve two things:
+
+- You want whatever task you invoke to be instantaneous (`Invocation`).
+- You also want responses for any invocation to be within a bounded time i.e quick (`Response`).
+
+If your computational task are light, you will expect the `Response` to be instantaneous to the user.
+The `Invocation/Response` model is the ideal way to view `Real-Time` from the user perspective.
+
+To fully understand `Real-Time` you must understand `Linearizability` commonly refer to as `atomicity`.
+And how this is implemented with either atomic operations (non-blocking) or using locks(blocking).
+It is the basis of understanding the issues with shared resources which are not resolved with only having a preemptive scheduling algorithm.
+
+      Atomicity. In computer programming, an operation done by a computer is considered atomic 
+      if it is guaranteed to be isolated from other operations that may be happening at the same time.
+
+- [Linearizability](https://en.wikipedia.org/wiki/Linearizability)
+
+- [Lock](https://en.wikipedia.org/wiki/Lock_(computer_science))
+
+- [Non-blocking or atomic](https://en.wikipedia.org/wiki/Non-blocking_algorithm)
+
 Lets start by looking at how these algorithms are implemented with an example taken from `PREEMPT_RT` [patches](https://cdn.kernel.org/pub/linux/kernel/projects/rt/).
 These are code changes made to turn the linux kernel into `Real-Time Preemption`.
 You can already configure the linux kernel for various preemptive scheduling or none.
