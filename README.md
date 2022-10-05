@@ -85,6 +85,26 @@ Summary of the steps to build the kernel are:
         
 [Step-by-step guide](https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3231/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fkernel_custom.html%23) 
 
+A look inside the PREEMPT_RT patch 
 
+	preempt_rt\patch-5.10.145-rt74.patch
+	
+You will see that some of the code changes touch files like
+
+	arch/arm/mm/highmem.c
+
+The changes there disables atomic functions `kmap_atomic()` access to highmen.
+
+- [Highmem](https://www.kernel.org/doc/Documentation/vm/highmem.txt)
+
+And a configuration change to a different  memory allocation mode
+
+	 config HIGHMEM
+	 	bool "High Memory Support"
+	 	depends on 32BIT && CPU_SUPPORTS_HIGHMEM && SYS_SUPPORTS_HIGHMEM && !CPU_MIPS32_3_5_EVA
+	+	select KMAP_LOCAL
+
+
+This is a perfect example of needing to understand `atomicity`. Here we have an atomic function designed to address a memory management issue in the kernel's address space with 32-bit architecture but makes it `non-preemptible`. Even though it will be for `optimised system performance` that you will use this function.
 
 
