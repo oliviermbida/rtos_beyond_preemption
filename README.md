@@ -35,7 +35,7 @@ It is the basis of understanding the issues with shared resources which are not 
 
 - [Non-blocking or atomic](https://en.wikipedia.org/wiki/Non-blocking_algorithm)
 
-The simplest preemptive algorithm implementation is an interrupt driven `super loop` but such implementation is not suited for complex application.
+The simplest preemptive algorithm implementation is an interrupt driven `superloop` or `main+ISR` like those found in `Arduino setup and loop` but it is not suited for complex application.
 Lets start by looking at how these algorithms are implemented with an example taken from `PREEMPT_RT` [patches](https://cdn.kernel.org/pub/linux/kernel/projects/rt/).
 These are code changes made to turn the linux kernel into `Real-Time Preemption`.
 You can already configure the linux kernel for various preemptive scheduling or none.
