@@ -113,4 +113,11 @@ And a configuration change to a different  memory allocation mode
 
 This is a perfect example of needing to understand `atomicity`. Here we have an atomic function designed to address a memory management issue in the kernel's address space with 32-bit architecture but makes it `non-preemptible`. Even though it will be for `optimised system performance` that you will use this function.
 
+Using this approach of looking inside the PREEMPT_RT patches is the recommended way to optimise your kernel.
+You need to understand what these patches do so that you can `cherry pick` which ones work for your project because the `Real-Time` need of every project is different. It is not a `fit-all` approach therefore the folder below contains individual patches which are optimised for the Nvidia embedded platform.
+A lot of them are from the `PREEMPT_RT` patches but they are listed individually so that we can learn what each do to the kernel. The rest are optimised patches for the Nvidia embedded platform mostly taken from fixing bugs which the mainline patches don't have.
+
+	optimised_rt\
+
+The process of `optimising system performance` is all about `cherry picking` what is best for the specific project. This can go beyond what is refered to as `tuning` because that can mostly focus on changing `paramaters` or configuration settings. 
 
