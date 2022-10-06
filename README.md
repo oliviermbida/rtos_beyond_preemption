@@ -16,6 +16,11 @@ Most likely if you choose to have an `RTOS` operating system, you want to achiev
 
 If your computational task are light, you will expect the `Response` to be instantaneous to the user.
 The `Invocation/Response` model is the ideal way to view `Real-Time` from the user perspective.
+This model also enables reasoning about other concepts such as `Active object design pattern`.
+
+	The active object design pattern decouples method execution from method invocation 
+	for objects that each reside in their own thread of control.
+	The goal is to introduce concurrency, by using asynchronous method invocation and a scheduler for handling requests.
 
 To fully understand `Real-Time` you must understand `Linearizability` commonly refer to as `atomicity`.
 And how this is implemented with either atomic operations (non-blocking) or using locks(blocking).
