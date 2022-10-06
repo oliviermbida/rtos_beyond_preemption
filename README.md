@@ -20,7 +20,8 @@ This model also enables reasoning about other concepts such as `Active object de
 
 	The active object design pattern decouples method execution from method invocation 
 	for objects that each reside in their own thread of control.
-	The goal is to introduce concurrency, by using asynchronous method invocation and a scheduler for handling requests.
+	The goal is to introduce concurrency, by using asynchronous method invocation 
+	and a scheduler for handling requests.
 
 To fully understand `Real-Time` you must understand `Linearizability` commonly refer to as `atomicity`.
 And how this is implemented with either atomic operations (non-blocking) or using locks(blocking).
